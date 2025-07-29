@@ -236,9 +236,8 @@
             <h2 class="text-3xl font-bold mb-12 text-center section-title">Professional Experience</h2>
             
             <div class="space-y-10">
-                <!-- Experience Item 1 -->
-      <div x-data="{ open: false }" class="experience-card bg-white p-6 rounded-lg shadow-md">
-
+        <!-- Experience Item 1 -->
+      <div x-data="{ open: false }" class="experience-card bg-white p-6 rounded-lg shadow-md cursor-pointer" @click="open = !open">
   <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
     <div>
       <h3 class="text-xl font-bold text-primary">Project Control Engineer</h3>
@@ -258,11 +257,11 @@
   </ul>
 
   <!-- Toggle Content -->
-  <div x-show="open" x-transition class="mt-6">
-    <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+  <div x-show="open" x-transition>
+    <div class="bg-gray-50 p-6 mt-6 rounded-lg shadow-inner">
       <h3 class="text-xl font-semibold text-primary mb-2">New Phosphate Port Construction Project Overview ($500M EPC)</h3>
 
-    <p class="mb-4">The New Phosphate Port is a major infrastructure project composed of the following components:</p>
+      <p class="mb-4">The New Phosphate Port is a major infrastructure project composed of the following components:</p>
 
       <h4 class="font-semibold mt-4 mb-2 underline">1. Breakwater Structure</h4>
       <ul class="list-disc pl-5 space-y-1 mb-2">
@@ -291,21 +290,21 @@
 
       <h4 class="font-semibold mt-4 mb-2 underline">4. Seawater Intake System</h4>
       <ul class="list-disc pl-5 space-y-1 mb-2">
-        <li>Two submerged intake pipes </li>
+        <li>Two submerged intake pipes</li>
         <li>Intake header at approx. -10m CD</li>
         <li>Booster Well (Pumping Station) near shoreline</li>
       </ul>
-
     </div>
   </div>
 
   <!-- Right-Aligned Toggle Button -->
   <div class="mt-4 flex justify-end">
-    <button @click="open = !open" class="text-accent font-medium hover:underline focus:outline-none">
+    <button @click.stop="open = !open" class="text-accent font-medium hover:underline focus:outline-none">
       <span x-text="open ? 'View Less ▲' : 'View More ▼'"></span>
     </button>
   </div>
-</div>   
+</div>
+
         <!-- Experience Item 2 -->
                                 
 <div x-data="{ open: false }" class="experience-card bg-white p-6 rounded-lg shadow-md cursor-pointer" @click="open = !open">
